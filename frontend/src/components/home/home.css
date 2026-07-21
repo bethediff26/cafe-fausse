@@ -1,0 +1,253 @@
+/* Hero */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(28rem, 72vh, 40rem);
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 22, 20, 0.92) 0%,
+    rgba(26, 22, 20, 0.55) 45%,
+    rgba(26, 22, 20, 0.35) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(3rem, 10vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  color: var(--text-h);
+}
+
+.hero__subtitle {
+  margin: 0;
+  max-width: 34rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11rem;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hero__cta--primary {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.hero__cta--primary:hover {
+  background: #d4b56e;
+  border-color: #d4b56e;
+}
+
+.hero__cta--secondary {
+  color: var(--text-h);
+  background: transparent;
+  border-color: var(--accent-border);
+}
+
+.hero__cta--secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Visit section */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-visit {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.home-visit__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+.home-visit__header {
+  max-width: 38rem;
+  margin-bottom: 2.5rem;
+}
+
+.home-visit__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.home-visit__intro {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.home-visit__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.visit-card {
+  padding: 1.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.visit-card__title {
+  margin: 0 0 1.25rem;
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+.visit-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  line-height: 1.6;
+}
+
+.visit-card__address {
+  font-style: normal;
+}
+
+.visit-card__label {
+  margin: 0.75rem 0 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.visit-card__label:first-child {
+  margin-top: 0;
+}
+
+.visit-card__link {
+  color: var(--text-h);
+  text-decoration: none;
+}
+
+.visit-card__link:hover {
+  color: var(--accent);
+}
+
+.visit-card__hours-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visit-card__hours-list li + li {
+  margin-top: 0.35rem;
+}
+
+.home-visit__figure {
+  margin: 0;
+}
+
+.home-visit__image {
+  width: 100%;
+  max-height: 22rem;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.home-visit__caption {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  .hero__cta {
+    width: 100%;
+  }
+
+  .home-visit__inner {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .home-visit__grid {
+    grid-template-columns: 1fr;
+  }
+}

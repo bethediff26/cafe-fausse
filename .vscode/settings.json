@@ -1,0 +1,4 @@
+{
+    "cursor.general.modelOverride": "qwen-claude:35b",
+    "cursor.openai.baseurl": "http://127.0.0.1:11434/v1"
+}

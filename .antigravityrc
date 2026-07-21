@@ -1,0 +1,4 @@
+AI_PROVIDER=openai-compatible
+AI_BASE_URL=http://127.0.0.1:11434/v1
+AI_MODEL=qwen-claude:35b
+AI_API_KEY=ollama

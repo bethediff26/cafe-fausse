@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root {
+  --text: #c8bfb6;
+  --text-h: #f5efe8;
+  --text-muted: #8a7f76;
+  --bg: #1a1614;
+  --surface: #221e1b;
+  --border: #3a332e;
+  --accent: #c9a962;
+  --accent-border: rgba(201, 169, 98, 0.45);
+  --content-max: 72rem;
+
+  --sans: 'Source Sans 3', system-ui, sans-serif;
+  --heading: 'Cormorant Garamond', Georgia, serif;
+
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--bg);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Reservation success / error banners (FR-9) ── */
+
+.success-banner {
+  padding: 16px 20px;
+  border-radius: 8px;
+  background: rgba(52, 140, 72, 0.12);
+  border: 1px solid rgba(52, 140, 72, 0.45);
+  color: #6ee7a0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.success-banner strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #86efac;
+}
+
+.success-banner p {
+  margin: 2px 0;
+}
+
+.error-banner {
+  padding: 16px 20px;
+  border-radius: 8px;
+  background: rgba(200, 50, 50, 0.12);
+  border: 1px solid rgba(200, 50, 50, 0.45);
+  color: #fca5a5;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.error-banner strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #fecaca;
+}
+
+.error-banner p {
+  margin: 2px 0;
+}

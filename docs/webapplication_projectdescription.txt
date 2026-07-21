@@ -1,0 +1,83 @@
+You have been provided both with a copy of the:
+● software requirements specification for this project, and
+● a collection of images for you to use.
+You are highly encouraged to utilize leading AI code generation tooling to assist in
+rapidly producing your Web application, being sure to describe in broad terms how you
+made use of them. Here are some examples of very useful AI tools you may wish to
+consider. You will be graded on the quality and functionality of the application and how
+well it meets the requirements - no given proportion of the code is required to be hand
+coded.
+AI-assisted software development tooling options include:
+● Cursor, an AI-based IDE, including agentic capabilities (https://cursor.com/) - a
+good starting point for local development
+● Codex (https://chatgpt.com/) - if your git and GitHub skills are already up to speed
+● Claude Code (https://code.claude.com/docs/en/overview) - if your command line
+interface, git and GitHub skills are already up to speed
+● Another tool of your choice
+● During the MS AI Engineering program you will make use of all of the tools listed
+above - so take this opportunity to go as far as you are comfortable during this
+project
+Hint: Start by loading the software requirements specification document into your AI tool
+or model of choice, optionally in planning mode, and then enhance, test and modify your
+code using your selected AI-assisted software development tooling.
+You have been tasked with crafting a website from scratch using your knowledge of
+HTML, CSS, and JavaScript. Restaurants are dependent upon intuitive interfaces and
+impressive visuals. This is where React will come into play. React is a flexible and efficient
+JavaScript library used to build user interfaces. It accomplishes this by combining small
+code elements, or “components”, into much larger designs. With an easy-to-learn
+approach and a wide array of resources and support, React can provide the ability to
+scale and reuse components across much larger projects. It’s a handy tool to have in
+your kit. To get started, visit the React tutorial page here.
+Work through the tutorials to get familiar with the React library and how to integrate it.
+Once you are comfortable, your team can begin planning the restaurant site.
+First, consider the fundamental functions the customer wants to see on the site:
+● Contact information: Address, phone number, hours
+● Their menu, broken up by categories
+● An “About Us” page highlighting the owners
+An email sign-up for a newsletter
+● A photo gallery page, and judicious use of photos throughout the site
+● Something showcasing their awards and positive reviews
+● An ability to make a table reservation via the Web site
+You will also want to provide a constant thematic look and feel by applying a consistent
+CSS for the entire site. You can either build this directly or utilize CSS-in-JS to code
+through the React scripts. Your CSS implementation should take either a Flexbox, or Grid
+approach to design. For more information, check here.
+In addition to needing a new web site providing a great web presence, the owner of Café
+Fausse is tired of fielding so many calls for available tables. What they need is a
+web-based system that provides the capability to accept reservations for customers. This
+system should be able to select specific timeslots, input the number of guests, assign a
+name to the reservation, require an email address and an optional phone number and
+store this information in the system. It should also check to ensure the timeslot is not fully
+occupied.
+To address the reservation system requested by the owner of Café Fausse, you will need
+to build both a front-end interface using forms, and a back-end SQL database that stores
+the reservations. This should be accomplished with a combination of a React front-end
+form, and using Flask/Python and PostgreSQL for back-end logic and database
+respectively. Your PostgreSQL database should have, at a minimum, a table for
+Reservations and Customers. Customers should have a “Customer ID”, “Customer
+Name”, “Customer Email”, “Phone Number” and “Newsletter Signup”. Reservations
+should have a “Reservation ID”, “Customer ID”, “Time Slot” (date and time), and “Table
+Number”. The back-end logic should take the customer’s information, add it to the
+customer table, then assign a random available table for the chosen time slot (assume
+there are 30 tables total). Once completed, it should confirm to the user a successful
+reservation. If all seats are taken for that time slot, the system should send back a
+message that the customer needs to pick another time.
+In total, your website should have a minimum of five pages:
+● Main (index) page
+● Menu
+● Reservations
+● About us
+● Gallery
+The additional elements listed above may be present on one of these pages or others.
+The email sign-up should utilize form elements to provide this functionality and include
+basic verification on the input fields, and also store sign-ups in a backend database.
+Once you are satisfied with the look and feel, test your site to ensure all links work and
+the behavior is intended. Verify that it can operate on multiple browsers and platforms.
+Consider using a mobile emulator tool, such as Chrome’s mobile simulator testing tool.
+Note: Your team can use additional photographs/images on the web site but ensure that
+they are royalty free. You can also or alternatively make use of additional AI-generated
+images.
+The final site and all of its components should be hosted either 1) locally (localhost) or 2)
+on an accessible staging server. In a submitted screenshare demonstration, you will
+demonstrate all functionality of your Web application.
+
