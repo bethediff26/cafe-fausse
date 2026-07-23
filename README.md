@@ -1,106 +1,54 @@
-Café Fausse — Full-Stack Web Application
+# cafe-fausse
 
-Café Fausse is an SRS-compliant, full-stack web application developed for an upscale fine-dining restaurant. The project features a dynamic React frontend, a Flask RESTful API backend, and a robust PostgreSQL relational database for persistent real-time reservation scheduling and newsletter signups.
+This repository supports the Web Application & Interface Design capstone presentation for the MS AI Engineering / Software Design program at Quantic School of Business & Technology.
 
-🏛️ Architecture & Tech Stack
+## Table of Contents
 
-Frontend: React + Vite, Tailwind CSS for responsive styling, Lightbox modal components, and state-driven category filters.
+- What is [Café Fausse](#café-fausse)?
+- [Requirements](#requirements)
+  - [Back End Requirements](#back-end-requirements)
+  - [Front End Requirements](#front-end-requirements)
+  - [Database Requirements](#database-requirements)
+- [Local Installation](#local-installation)
+- [Running the Back End](#running-the-back-end)
+- [Running the Front End](#running-the-front-end)
+- [Verifying the Database Effect](#verifying-the-database-effect)
+- [More Information about Architecture & AI Engineering](#more-information-about-architecture--ai-engineering)
 
-Backend: Flask RESTful API (Python), enforcing regex input/email validation and real-time table capacity algorithms.
+## Café Fausse
 
-Database: PostgreSQL Relational Database, storing customer reservations, table allocations, and newsletter subscriber persistence.
+Café Fausse is an upscale fine-dining restaurant web application designed to demonstrate a robust, full-stack architecture compliant with all Software Requirement Specification (SRS) standards.
 
-AI Tooling & Pairing: Qwen 3.6 35B MoE via Ollama, Claude Code CLI bridge for rapid prototyping, static analysis, and SRS compliance auditing.
+The platform features an interactive home and specials banner, a dynamically filtered digital menu, background information and chef bios, an interactive photo gallery with modal Lightbox popups, real-time table reservation management, and direct PostgreSQL database persistence for newsletter subscriptions and bookings.
 
-🚀 Features & Deliverables
+## Requirements
 
-Home & Specials Page: Hero banner, daily chef specials, and footer newsletter subscription with regex email checks.
+The Café Fausse application is modularly divided into a back end API, a database layer, and a front end client.
 
-Interactive Menu Page: Category filtering (Appetizers, Mains, Desserts, Drinks) with instant React state updates.
+#### Back End Requirements
 
-About Us Page: Restaurant heritage, chef team bios, location details, and operating hours.
+The application's back end was created using [Flask](https://flask.palletsprojects.com/) and Python 3.10+. It enforces regex-based input and email validation as well as custom real-time 30-table capacity allocation algorithms to prevent reservation time-slot collisions.
 
-Gallery & Reviews Page: Interactive Lightbox modal gallery and verified customer reviews.
+#### Front End Requirements
 
-Reservations System: Live booking flow with sub-second real-time capacity checks across a 30-table layout to eliminate time-slot collisions in PostgreSQL.
+The front end was built using [React](https://react.dev/) and [Vite](https://vitejs.dev/) with [Tailwind CSS](https://tailwindcss.com/) for responsive UI component rendering. It requires [Node 18+](https://nodejs.org/) or newer.
 
-⚙️ Local Setup Instructions
+#### Database Requirements
 
-Prerequisites
+The relational data layer requires a local or remote [PostgreSQL](https://www.postgresql.org/) database server instance storing persistent tables for subscribers, reservations, and customer records.
 
-Python 3.10+
+## Local Installation
 
-Node.js v18+ & npm
+1. Clone the repository:
 
-PostgreSQL server running locally
+   
+```bash
+   git clone git@github.com:bethediff26/cafe-fausse.git
+   cd cafe-fausse
 
-1. Database Setup
+2. Initialize the PostgreSQL database:
 
-Create a PostgreSQL database named cafe_fausse:
-
-createdb cafe_fausse
-
-
-Initialize schema and tables:
-
-psql -d cafe_fausse -f backend/schema.sql
-
-
-2. Backend Setup (Flask API)
-
-Navigate to the backend directory:
-
-cd backend
-
-
-Create and activate a virtual environment:
-
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-
-Configure environment variables (e.g., database connection string):
-
-export DATABASE_URL="postgresql://localhost/cafe_fausse"
-
-
-Run the Flask server:
-
-python app_cafe.py
-
-
-The API server will start on http://127.0.0.1:5000.
-
-3. Frontend Setup (React + Vite)
-
-Navigate to the frontend directory:
-
-cd ../frontend
-
-
-Install dependencies:
-
-npm install
-
-
-Start the Vite development server:
-
-npm run dev
-
-
-Open your browser and navigate to http://localhost:5173.
-
-🧪 Database Verification
-
-To directly inspect persistent database records (without an admin UI):
-
--- Verify latest newsletter subscriber
-SELECT * FROM subscribers ORDER BY created_at DESC LIMIT 1;
-
--- Verify latest reservation entry
-SELECT * FROM reservations ORDER BY reservation_id DESC LIMIT 1;
+```bash
+   createdb cafe_fausse
+   psql -d cafe_fausse -f backend/schema.sql
+   
