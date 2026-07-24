@@ -7,6 +7,8 @@ import { useState } from 'react';
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function NewsletterSignup() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null); // 'success' | 'error' | null
   const [loading, setLoading] = useState(false);
@@ -27,7 +29,11 @@ export default function NewsletterSignup() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim().toLowerCase() }),
+        body: JSON.stringify({
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: email.trim().toLowerCase(),
+        }),
       });
       if (!res.ok) {
         const err = await res.json();
@@ -38,6 +44,8 @@ export default function NewsletterSignup() {
         return;
       }
       setStatus('success');
+      setFirstName('');
+      setLastName('');
       setEmail('');
     } catch {
       setStatus('error');
@@ -63,6 +71,33 @@ export default function NewsletterSignup() {
         </p>
 
         <form onSubmit={handleSubmit} noValidate className="space-y-4">
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+                if (status === 'error') setStatus(null);
+              }}
+              placeholder="First name"
+              aria-label="First name"
+              className="px-4 py-3 rounded-lg text-stone-900 text-lg focus:outline-none focus:ring-2 border-2 border-transparent focus:ring-orange-400"
+              disabled={loading}
+            />
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+                if (status === 'error') setStatus(null);
+              }}
+              placeholder="Last name"
+              aria-label="Last name"
+              className="px-4 py-3 rounded-lg text-stone-900 text-lg focus:outline-none focus:ring-2 border-2 border-transparent focus:ring-orange-400"
+              disabled={loading}
+            />
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"

@@ -332,6 +332,9 @@ def register_routes(app: Flask) -> None:
     @app.post("/api/newsletter")
     def subscribe_newsletter():
         payload = request.get_json(silent=True) or {}
+        first_name = (payload.get("firstName") or "").strip()
+        last_name = (payload.get("lastName") or "").strip()
+        name = f"{first_name} {last_name}".strip() or None
         email = (payload.get("email") or "").strip().lower()
 
         if not is_valid_email(email):
@@ -339,9 +342,12 @@ def register_routes(app: Flask) -> None:
 
         customer = Customer.query.filter_by(email=email).first()
         if customer:
+            if name and not customer.name:
+                customer.name = name
             customer.newsletter_signup = True
         else:
             customer = Customer(
+                name=name,
                 email=email,
                 newsletter_signup=True,
             )
