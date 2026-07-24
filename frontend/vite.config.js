@@ -11,6 +11,10 @@ export default defineConfig({
         target: 'http://localhost:5000',
         changeOrigin: true,
       },
+      '/static': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
     },
   },
 })
